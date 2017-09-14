@@ -1,12 +1,23 @@
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}"/>
 {% if album_list %}
-    <ul>
+    <table border="1">
+        <tr>
+            <td>专辑名</td>
+            <td>艺术家名</td>
+            <td>发布日期</td>
+            <td>获赞数</td>
+        </tr>
         {% for album in album_list %}
-{#            <li><a href="{% url 'music:albumIndex' question.id %}">{{ question.question_text }}</a></li>#}
-            {{ album.name }}
+            <tr>
+                <td>{{ album.name }}</td>
+                <td>{{ album.artist.last_name }} {{ album.artist.first_name }}</td>
+                <td>{{ album.release_date }} </td>
+                <td>{{ album.num_starts }}</td>
+            </tr>
+            {#            {{ album.name }}#}
         {% endfor %}
-    </ul>
+    </table>
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
