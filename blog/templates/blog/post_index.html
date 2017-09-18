@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}"/>
+{% if post_list %}
+    <table border="1">
+        <tr>
+            <td>文章名称</td>
+            <td>作者</td>
+            <td>发布日期</td>
+            <td>获赞数</td>
+        </tr>
+        {% for post in post_list %}
+            <tr>
+                <td>{{ post.title }}</td>
+                <td>{{ post.content }}</td>
+                <td>{{ post.release_date }} </td>
+                <td>{{ post.num_starts }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No posts are available.</p>
+{% endif %}

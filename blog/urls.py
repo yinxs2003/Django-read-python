@@ -1,10 +1,9 @@
-from music import views
+from blog import views
 
 from django.conf.urls import url
-from django.contrib import admin
 
 urlpatterns = [
-    url(r'^$', views.albumIndex, name='albumIndex'),
+    url(r'^$', views.blog_index, name='blog_index'),
     # url(r'(?P<album_id>[0-9]+)^$', views.albumIndex, name='albumIndex'),
     # url(r'^(?P<question_id>[0-9]+)/$', views.detail, name='detail'),
     # # ex: /polls/5/results/
