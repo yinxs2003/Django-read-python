@@ -1,7 +1,10 @@
+
 from django.shortcuts import render
 
 # Create your views here.
-from blog.models import Post
+from django.template.defaultfilters import stringfilter
+
+from blog.models import Post, About
 
 
 def blog_index(request):
@@ -9,3 +12,7 @@ def blog_index(request):
     return render(request, 'blog/post_index.html', {
         'post_list': post_list,
     })
+
+
+def about(request):
+    return render(request, 'blog/about.html', {'about_list': About.objects.all()})
