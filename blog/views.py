@@ -9,7 +9,7 @@ from blog.models import Post, About
 
 def blog_index(request):
     post_list = Post.objects.order_by('-num_starts')[:5]
-    return render(request, 'blog/post_index.html', {
+    return render(request, 'blog/index.html', {
         'post_list': post_list,
     })
 
