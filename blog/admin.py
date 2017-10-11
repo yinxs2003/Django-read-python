@@ -7,7 +7,7 @@ from blog.models import Post, Comment, About
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('',)
+    list_display = ('name',)
 
 
 @admin.register(About)
@@ -17,4 +17,4 @@ class AboutAdmin(admin.ModelAdmin):
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('about_me',)
+    list_display = ('title',)
